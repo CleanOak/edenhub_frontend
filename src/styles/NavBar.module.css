@@ -1,0 +1,12 @@
+.NavBar {
+    background-color: #6a994e;
+    border: 1px solid #dadadf;
+}
+
+.Brand {
+    color: #dadadf;
+}
+
+.Active i {
+    color: #2142b2;
+}

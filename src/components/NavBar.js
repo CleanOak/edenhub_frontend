@@ -1,13 +1,14 @@
 import React from 'react'
+import styles from "../styles/NavBar.module.css";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';import Navbar from 'react-bootstrap/Navbar';
 
 
 const NavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="md" fixed='top' className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="md" fixed='top' className={styles.NavBar}>
       <Container>
-        <Navbar.Brand href="#home">EdenHub</Navbar.Brand>
+        <Navbar.Brand className={styles.Brand}>EdenHub</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
