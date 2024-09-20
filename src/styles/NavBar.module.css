@@ -4,7 +4,11 @@
 }
 
 .Brand {
-    color: #dadadf;
+    font-size: 1.6rem;
+}
+
+.NavLink {
+    padding: 5px;
 }
 
 .Active i {
