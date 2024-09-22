@@ -3,7 +3,8 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
+import { Form, Button, Image, Col, Row, Container} from "react-bootstrap";
 import axios from "axios";
 
 const SignUpForm = () => {
@@ -12,14 +13,12 @@ const SignUpForm = () => {
     password1: '',
     password2: '',
   });
-  
-  const {username, password1, password2} = signUpData;
+  const{username, password1, password2} = signUpData
 
   const [errors, setErrors] = useState({});
 
   const history = useHistory();
   
-
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
@@ -30,12 +29,14 @@ const SignUpForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post('/dj-rest-auth/registration/', signUpData)
-      history.push('/signin')
-     }catch(err){
-      setErrors(err.response?.data)
+      await axios.post("/dj-rest-auth/registration/", signUpData);
+      history.push("/signin");
+    } catch (err) {
+      setErrors(err.response?.data);
+      console.error('Error',err);
     }
-  }
+  };
+  
 
   return (
     <Row className={styles.Row}>
@@ -45,7 +46,7 @@ const SignUpForm = () => {
 
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="username">
-        <Form.Label className="d-none">username</Form.Label>
+        <Form.Label className="d-none">Username</Form.Label>
         <Form.Control 
         className={styles.Input} 
         type="text" 
@@ -55,9 +56,11 @@ const SignUpForm = () => {
         onChange={handleChange}
         />
       </Form.Group>
-      {errors.username?.map((message, idx) =>
-        <Alert variant="warning" key={idx}>{message}</Alert>
-    )}
+      {errors.username?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group className="mb-3" controlId="password1">
         <Form.Label className="d-none">Password</Form.Label>
@@ -70,6 +73,13 @@ const SignUpForm = () => {
         onChange={handleChange}
         />
       </Form.Group>
+      {errors.password1?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+
       <Form.Group className="mb-3" controlId="password2">
         <Form.Label className="d-none">Password</Form.Label>
         <Form.Control 
@@ -81,6 +91,11 @@ const SignUpForm = () => {
         onChange={handleChange}
         />
       </Form.Group>
+      {errors.password2?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Button className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} type="submit">
         Sign Up
       </Button>

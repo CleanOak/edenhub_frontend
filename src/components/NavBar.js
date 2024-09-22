@@ -22,9 +22,9 @@ const NavBar = () => {
             exact
             className={styles.NavLink} 
             activeClassName={styles.Active} 
-            to="/"><i class="fa-solid fa-house"></i>Home</NavLink>
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin"><i class="fa-solid fa-right-to-bracket"></i>Sign in</NavLink> 
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup"><i class="fa-solid fa-user-plus"></i>Sign up</NavLink>  
+            to="/"><i className="fa-solid fa-house"></i>Home</NavLink>
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin"><i className="fa-solid fa-right-to-bracket"></i>Sign in</NavLink> 
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup"><i className="fa-solid fa-user-plus"></i>Sign up</NavLink>  
           </Nav>
         </Navbar.Collapse>
       </Container>
