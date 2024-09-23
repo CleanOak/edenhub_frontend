@@ -48,6 +48,7 @@ const SignUpForm = () => {
       <Form.Group className="mb-3" controlId="username">
         <Form.Label className="d-none">Username</Form.Label>
         <Form.Control 
+        required
         className={styles.Input} 
         type="text" 
         placeholder="Username" 
@@ -64,7 +65,8 @@ const SignUpForm = () => {
 
       <Form.Group className="mb-3" controlId="password1">
         <Form.Label className="d-none">Password</Form.Label>
-        <Form.Control 
+        <Form.Control
+        required 
         className={styles.Input} 
         type="password" 
         placeholder="Password" 
@@ -83,6 +85,7 @@ const SignUpForm = () => {
       <Form.Group className="mb-3" controlId="password2">
         <Form.Label className="d-none">Password</Form.Label>
         <Form.Control 
+        required
         className={styles.Input} 
         type="password" 
         placeholder="Confirm Password" 
