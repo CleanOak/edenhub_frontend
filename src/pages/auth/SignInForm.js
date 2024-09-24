@@ -68,7 +68,7 @@ function SignInForm() {
         />
       </Form.Group>
       {errors.username?.map((message, idx) => (
-        <Alert variant="warning" className="mt-3" key={idx}>
+        <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
@@ -93,6 +93,11 @@ function SignInForm() {
       <Button className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} type="submit">
         Sign In
       </Button>
+      {errors.non_field_errors?.map((message, idx) => (
+        <Alert key={idx} variant="danger" className="mt-3">
+          {message}
+        </Alert>
+      ))}
     </Form>
 
         </Container>
