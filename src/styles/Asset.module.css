@@ -1,0 +1,14 @@
+.Asset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;    
+  }
+
+  .Asset img {
+    max-width: 100%;      /* Ensure the image doesn't exceed the container's width */
+    max-height: 120px;    /* Limit the image height */
+    object-fit: contain;  /* Ensure the image retains its aspect ratio */
+    border-radius: 8px;   /* Optional: Add rounded corners */
+  }
