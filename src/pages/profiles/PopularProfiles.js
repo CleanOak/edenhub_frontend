@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useProfileData } from "../../contexts/ProfileDataContext";
 import Profile from "./Profile";
 
 const PopularProfiles = ({ mobile }) => {
@@ -13,7 +13,8 @@ const PopularProfiles = ({ mobile }) => {
     popularProfiles: { results: [] },
   });
   const { popularProfiles } = profileData;
-  const currentUser = useCurrentUser();
+  const currentUser = useProfileData();
+
 
   useEffect(() => {
     const handleMount = async () => {

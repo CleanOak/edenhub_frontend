@@ -37,7 +37,7 @@ const NavBar = () => {
   )
 
   const loggedInIcons = <>
-  {currentUser?.username}
+  
   <NavLink 
          className={styles.NavLink} 
          activeClassName={styles.Active} 
