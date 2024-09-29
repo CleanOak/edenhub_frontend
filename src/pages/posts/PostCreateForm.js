@@ -5,20 +5,23 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
+import Image from "react-bootstrap/Image";
+
+import Asset from "../../components/Asset";
 
 import Upload from "../../assets/upload.png";
-import Alert from "react-bootstrap/Alert";
+
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Asset from "../../components/Asset";
-import { Image } from "react-bootstrap";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
+import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
-  useRedirect('loggedOut');
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
@@ -43,7 +46,7 @@ function PostCreateForm() {
       URL.revokeObjectURL(image);
       setPostData({
         ...postData,
-        image: URL.createObjectURL(event.target.files[0] || ""),
+        image: URL.createObjectURL(event.target.files[0]),
       });
     }
   };
@@ -54,12 +57,7 @@ function PostCreateForm() {
 
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("image", imageInput.current.files[0] || "");
-    // if (imageInput?.current?.files[0]) {
-    //   formData.append("image", imageInput.current.files[0]);
-    // } else {
-    //   formData.append("image", "");
-    // }
+    formData.append("image", imageInput.current.files[0]);
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
@@ -83,7 +81,7 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors.title?.map((message, idx) => (
+      {errors?.title?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -99,7 +97,7 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors.content?.map((message, idx) => (
+      {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -107,7 +105,7 @@ function PostCreateForm() {
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => {}}
+        onClick={() => history.goBack()}
       >
         cancel
       </Button>
@@ -152,18 +150,18 @@ function PostCreateForm() {
               )}
 
               <Form.File
-                ref={imageInput}
                 id="image-upload"
                 accept="image/*"
                 onChange={handleChangeImage}
-                key={image}
+                ref={imageInput}
               />
             </Form.Group>
-            {errors.image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
                 {message}
-                </Alert>
+              </Alert>
             ))}
+
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
