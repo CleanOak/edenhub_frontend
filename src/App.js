@@ -55,8 +55,8 @@ function App() {
           <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
           <Route render={() => <p>Page not found!</p>} />
           </Switch>  
-                </Container>
-              </div>
+       </Container>
+          </div>
               
   );
 }
