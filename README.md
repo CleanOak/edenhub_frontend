@@ -2,7 +2,7 @@
 
 EdenHub is a social media platform which brings nature lovers to oone place. This app is designed tourists and explorers to share the beautiful environment we enjoy. The web application has been built with technologies such as React, Bootstrap, and Django to build the Backend. The repository for the Backend can be found below, which has its own README document. 
 
-## Mockup page goes here 
+![Eden Hub Page]() 
 
 **LIVE SITE**
 
