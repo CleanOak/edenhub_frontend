@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import CommentEditForm from "./CommentEditForm";
-
+import { formatDate } from "../../utils/formatDate"; // Import the formatDate function
 import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -46,14 +46,14 @@ const Comment = (props) => {
 
   return (
     <>
-      <hr />
+      <hr className={styles.Divider} />
       <Media className="d-flex">
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
         </Link>
         <Media.Body className="align-self-center ml-2">
           <span className={styles.Owner}>{owner}</span>
-          <span className={styles.Date}>{updated_at}</span>
+          <span className={styles.Date}>{formatDate(updated_at)}</span> {/* Format the date */}
           {showEditForm ? (
             <CommentEditForm
               id={id}

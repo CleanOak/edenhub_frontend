@@ -79,6 +79,7 @@ function PostCreateForm() {
           name="title"
           value={title}
           onChange={handleChange}
+          className={styles.InputField} // Add custom class
         />
       </Form.Group>
       {errors?.title?.map((message, idx) => (
@@ -95,6 +96,7 @@ function PostCreateForm() {
           name="content"
           value={content}
           onChange={handleChange}
+          className={styles.InputField} // Add custom class
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (
@@ -107,10 +109,10 @@ function PostCreateForm() {
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+        Create
       </Button>
     </div>
   );
@@ -125,7 +127,7 @@ function PostCreateForm() {
             <Form.Group className="text-center">
               {image ? (
                 <>
-                  <figure>
+                  <figure className={styles.ImagePreview}>
                     <Image className={appStyles.Image} src={image} rounded />
                   </figure>
                   <div>
@@ -154,6 +156,7 @@ function PostCreateForm() {
                 accept="image/*"
                 onChange={handleChangeImage}
                 ref={imageInput}
+                className="d-none" // Hide default file input
               />
             </Form.Group>
             {errors?.image?.map((message, idx) => (

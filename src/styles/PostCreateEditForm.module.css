@@ -1,3 +1,44 @@
 .Container {
-    min-height: 343px;
-  }
+  min-height: 343px;
+  background-color: #f9f9f9; /* Light background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Inner padding */
+}
+
+.InputField {
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px; /* Inner padding */
+  margin-bottom: 10px; /* Spacing between fields */
+  font-size: 16px; /* Font size */
+  transition: border-color 0.3s; /* Transition for focus */
+}
+
+.InputField:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+
+.ImagePreview {
+  max-width: 100%; /* Prevent overflow */
+  max-height: 300px; /* Limit height */
+  margin: 10px 0; /* Spacing */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  position: relative; /* For positioning */
+}
+
+.ImagePreview img {
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.btn {
+  margin-top: 10px; /* Space between buttons */
+  width: 48%; /* Make buttons consistent */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

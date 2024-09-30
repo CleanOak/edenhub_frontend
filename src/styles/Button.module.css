@@ -1,67 +1,59 @@
 .Button {
-    font-size: 0.8rem;
-    align-self: center;
-    border-radius: 100px;
-    border-color: transparent;
-    padding: 4px 10px;
-    margin-left: 2px;
-    margin-right: 2px;
-    min-width: 75px;
-  }
-  
-  .Button:hover {
-    opacity: 0.8;
-    border-color: transparent;
-    cursor: pointer;
-  }
-  
-  .Button:hover:active {
-    background-color: #2142b2 !important;
-  }
-  
-  .Button:active {
-    background-color: #2142b2 !important;
-  }
-  
-  .Button:focus {
-    background-color: #2142b2;
-  }
-  
-  .Wide {
-    padding: 10px 50px;
-    width: 100%;
-  }
-  
-  .Blue,
-  .BlueOutline:hover,
-  .Bright:hover {
-    background-color: #2142b2;
-    color: #ffffff;
-  }
-  
-  .BlueOutline,
-  .Blue:hover {
-    /* border: 1px solid #2142b2; */
-    background-color: #ffffff;
-    color: #2142b2;
-  }
-  
-  .Black,
-  .BlackOutline:hover {
-    background-color: #242a3d;
-    color: aliceblue;
-  }
-  
-  .Black:hover,
-  .BlackOutline {
-    background-color: #dadadf;
-    color: #242a3d;
-    border-color: #242a3d;
-    background-color: aliceblue;
-    color: #242a3d;
-  }
-  
-  .Bright {
-    background-color: #6a994e;
-    color: white;
-  }
+  font-size: 0.75rem; /* Smaller font size */
+  font-weight: 500; /* Medium weight for emphasis */
+  align-self: center;
+  border-radius: 30px; /* Less rounded for a sleek look */
+  border: 2px solid transparent; /* Keeps border structure */
+  padding: 6px 15px; /* Reduced padding for smaller buttons */
+  margin: 2px; /* Smaller margin for tighter spacing */
+  min-width: 70px; /* Slightly smaller minimum width */
+  background-color: #6a994e; /* Primary button color */
+  color: #ffffff; /* Text color */
+  transition: background-color 0.3s ease, transform 0.2s; /* Smooth transitions */
+}
+
+.Button:hover {
+  opacity: 0.9; /* Slightly less opaque on hover */
+  cursor: pointer;
+  background-color: #5a8745; /* Darker shade for hover effect */
+  transform: translateY(-1px); /* Subtle lift effect */
+}
+
+.Button:active {
+  background-color: #4b7a38; /* Darker for active state */
+  transform: translateY(1px); /* Subtle push down effect */
+}
+
+.Button:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(106, 153, 78, 0.5); /* Custom focus ring */
+}
+
+.Wide {
+  padding: 8px 20px; /* Adjusted padding for wide buttons */
+  width: 100%; /* Full width */
+}
+
+.Blue {
+  background-color: #6a994e; /* Default blue button color */
+  color: #ffffff; /* Default text color */
+}
+
+.Blue:hover {
+  background-color: #5a8745; /* Darker shade for hover */
+}
+
+.Bright {
+  background-color: #6a994e; /* Bright color */
+  color: white; /* Text color */
+}
+
+.Black {
+  background-color: #242a3d; /* Dark background for black buttons */
+  color: #ffffff; /* White text for contrast */
+}
+
+.Black:hover {
+  background-color: #1e242d; /* Darker shade for hover */
+  color: #ffffff; /* Maintain white text */
+}

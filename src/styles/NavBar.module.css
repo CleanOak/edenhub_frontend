@@ -1,16 +1,27 @@
+/* NavBar.module.css */
+
 .NavBar {
-    background-color: #6a994e;
-    border: 1px solid #dadadf;
+    background-color: white; /* White background for the navbar */
+    padding: 0.5rem 0; /* Reduced padding for a compact look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
 
 .Brand {
-    font-size: 1.6rem;
+    font-size: 1.6rem; /* Font size for the brand */
+    padding: 0; /* Remove padding for the brand */
+    margin-right: 40px; /* Increased margin to create more space */
+}
+
+.Logo {
+    width: 70px; /* Desired width for the logo */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .NavLink {
-    padding: 5px;
+    padding: 0.5rem; /* Padding for links */
+    margin-left: 20px; /* Add margin to separate the links further */
 }
 
 .Active i {
-    color: #2142b2;
+    color: #6a994e; /* Active icon color */
 }

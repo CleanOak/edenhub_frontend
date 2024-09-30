@@ -1,13 +1,49 @@
 .ProfileImage {
-    object-fit: cover;
-    height: 120px;
-    width: 120px;
-    margin: 4px;
-  }
-  
-  @media screen and (max-width: 991px) {
-    .ProfileImage {
+  object-fit: cover;
+  height: 120px;
+  width: 120px;
+  margin: 4px;
+  border-radius: 50%; /* Ensures image is circular */
+}
+
+.ProfileInfo {
+  text-align: center; /* Center align text */
+}
+
+.ProfileStats {
+  display: flex;
+  justify-content: space-between; /* Space between stats */
+  margin: 0 auto; /* Center the stats */
+}
+
+.ProfileStats div {
+  flex: 1; /* Each stat takes equal space */
+}
+.PostGrid {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of items */
+  gap: 10px; /* Space between items */
+}
+
+.PostGridItem {
+  flex: 1 0 200px; /* Flex-grow, shrink and base size for items */
+  margin: 5px; /* Add some margin around items */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Optional: Style for loading spinner or empty state */
+.Asset {
+  text-align: center; /* Center align asset message */
+}
+
+
+/* Media queries for responsive design */
+@media screen and (max-width: 991px) {
+  .ProfileImage {
       width: 250px;
       height: 250px;
-    }
   }
+}

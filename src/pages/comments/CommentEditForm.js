@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
-
 import styles from "../../styles/CommentCreateEditForm.module.css";
 
 function CommentEditForm(props) {
@@ -27,7 +25,7 @@ function CommentEditForm(props) {
             ? {
                 ...comment,
                 content: formContent.trim(),
-                updated_at: "now",
+                updated_at: new Date().toISOString(), // Update to current time
               }
             : comment;
         }),
@@ -55,14 +53,14 @@ function CommentEditForm(props) {
           onClick={() => setShowEditForm(false)}
           type="button"
         >
-          cancel
+          Cancel
         </button>
         <button
           className={styles.Button}
-          disabled={!content.trim()}
+          disabled={!formContent.trim()}
           type="submit"
         >
-          save
+          Save
         </button>
       </div>
     </Form>

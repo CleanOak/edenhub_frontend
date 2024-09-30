@@ -1,0 +1,53 @@
+/* ProfileEditForm.module.css */
+
+.ProfileEditForm {
+    background-color: #ffffff; /* White background for a clean look */
+    border-radius: 10px; /* Rounded corners for the form */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 2rem; /* Adequate padding around the form */
+    max-width: 800px; /* Limit the maximum width of the form */
+    margin: auto; /* Center the form */
+  }
+  
+  .ProfileImage {
+    width: 100%; /* Make image responsive */
+    max-width: 200px; /* Limit max width */
+    border-radius: 10px; /* Round the image corners */
+    border: 2px solid #007bff; /* Blue border to match the theme */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around the image */
+    margin-bottom: 1rem; /* Space below the image */
+  }
+  
+  .ProfileEditForm label {
+    font-weight: 600; /* Make labels bolder */
+    margin-bottom: 0.5rem; /* Space between label and input */
+  }
+  
+  .ProfileEditForm .btn {
+    margin-top: 1rem; /* Space above buttons */
+    border-radius: 5px; /* Rounded button corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .ProfileEditForm .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .ProfileEditForm .alert {
+    margin-top: 1rem; /* Space above error alerts */
+  }
+  
+  textarea {
+    border-radius: 5px; /* Rounded corners for textarea */
+    border: 1px solid #ced4da; /* Light gray border */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+  }
+  
+  textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow effect on focus */
+  }
+  
+  .form-file {
+    display: none; /* Hide the file input */
+  }

@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-
-import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import styles from "../../styles/CommentCreateEditForm.module.css";
 
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
 
   const handleChange = (event) => {
-    setContent(event.target.value);
+    const newValue = event.target.value;
+    setContent(newValue);
+    console.log("Content:", newValue); // Debugging log
   };
 
   const handleSubmit = async (event) => {
@@ -35,36 +35,36 @@ function CommentCreateForm(props) {
           },
         ],
       }));
-      setContent("");
+      setContent(""); // Clear the comment input after submission
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <Form className="mt-2" onSubmit={handleSubmit}>
-      <Form.Group>
-        <InputGroup>
+    <Form className={styles.CommentForm} onSubmit={handleSubmit}>
+      <Form.Group className={styles.FormGroup}>
+        <InputGroup className={`align-items-center ${styles.InputGroup}`}>
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profileImage} />
           </Link>
           <Form.Control
-            className={styles.Form}
-            placeholder="my comment..."
+            className={`${styles.TextArea} flex-grow-1`} // Custom textarea styles
+            placeholder="Add a comment..."
             as="textarea"
             value={content}
             onChange={handleChange}
             rows={2}
           />
+          <button
+            className={`${styles.PostButton} ${content.trim() ? styles.ActiveButton : ""} btn ml-2`} // Apply active class if content exists
+            disabled={!content.trim()} // Disable button if content is empty
+            type="submit"
+          >
+            Post
+          </button>
         </InputGroup>
       </Form.Group>
-      <button
-        className={`${styles.Button} btn d-block ml-auto`}
-        disabled={!content.trim()}
-        type="submit"
-      >
-        post
-      </button>
     </Form>
   );
 }
