@@ -81,6 +81,8 @@ Extensive manual testing was carried out to ensure the Frontend features worked 
 - Jshint showed some warnings regarding version ES6
 - Web app needs optimising to improve performance on lighthouse
 - Overlay: Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.
+- Not able to store refreshtoken timestamp as a value as a results there is a constant error message in the console as shown below.
+- ***insert error image***
 - Due to time constraints I had to give up on implementing forgotten password via email confirmation
 
 ---
