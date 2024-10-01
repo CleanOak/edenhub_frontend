@@ -130,6 +130,8 @@ The colours chosen for the website were based on nature inspired colours.
 
 ## Typography
 
+Inter font was chosen for the main fonts of the web app from Google fonts.
+
 Simple and elegant fonts were chosen from Google Fonts, that complimented each other without being too distracting.
 
 ## Wireframes
