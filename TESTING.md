@@ -71,9 +71,10 @@ Extensive manual testing was carried out to ensure the Frontend features worked 
 
 # **Bugs and Fixes**
 
-- Search function no working on profile page - changed order of code to enable search..
 - Style Edit Profile form and fix upload issue - found a trailing / and also mismatched fields to api.
 - findDOMNode is deprecated - amended index.js file, but after research think it must be to do with version of React and Bootstrap and the use of Overlay.
+- I had an authentication error request from the backend due to CORS headers not properly configured. This was resolved when I added
+  a new regex format from codeinstiture
 - UX bug - changed the search term on ‘Friends’ page that if they are not following anyone, that the results come back as, 'no friends', rather than no homes.
 - Search bar - seems to be skipping searching within the content, so not giving full search results. Updated the search_fields in the API>posts>serializers file to include 'content'.
 - Likes on Liked page BUG: Works on all pages, however when on 'Friends' & 'Liked', get a 'NaN' appear next to the icon when liking or unliking. I believe this has something to do with trying to refresh the page whilst on the Liked page and not being able to autorefresh. I had a quick look in the backend but time hasn't allowed for this bug to be fixed. Just means that users need to refresh the page for it to take effect.
