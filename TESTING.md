@@ -78,6 +78,8 @@ Extensive manual testing was carried out to ensure the Frontend features worked 
 - UX bug - changed the search term on ‘Friends’ page that if they are not following anyone, that the results come back as, 'no friends', rather than no homes.
 - Search bar - seems to be skipping searching within the content, so not giving full search results. Updated the search_fields in the API>posts>serializers file to include 'content'.
 - Likes on Liked page BUG: Works on all pages, however when on 'Friends' & 'Liked', get a 'NaN' appear next to the icon when liking or unliking. I believe this has something to do with trying to refresh the page whilst on the Liked page and not being able to autorefresh. I had a quick look in the backend but time hasn't allowed for this bug to be fixed. Just means that users need to refresh the page for it to take effect.
+- Jshint showed some warnings regarding version ES6
+- Web app needs optimising to improve performance on lighthouse
 - Due to time constraints I had to give up on implementing forgotten password via email confirmation
 
 ---
