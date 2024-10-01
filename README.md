@@ -262,6 +262,8 @@ If a user tries to access a page that isn't valid, they will get a 404 Page Not 
 
 # **Testing**
 
+[Testing for the API can be found here in a separate file - TESTING.md](TESTING.md)
+
 # **Deployment**
 
 Both Environment & Settings and Deploying to Heroku have been set up [within the API](), however I shall list the full deployment details here for ease of reference.
