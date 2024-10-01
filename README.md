@@ -177,9 +177,13 @@ Before implementing the website, I created [Wireframes for each page using Balsa
 
 All posts are immediately able to be seen for ease of viewing and to give a better user experience. The navbar sticks to the top of the page, so users are able to choose the option to sign up or sign in at all times. In desktop view they are also able to see a list of other registered users, and they can click on the icons to see their profile page, but they are unable to interact until they have signed in. On the landing page, other user profiles are hidden to give a better experience on a smaller screen.
 
+![Landing Page](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/main_page.png)
+
 ## Sign Up & Sign In
 
 A quick and simple sign up form so that users can get posting straight away. Once they have created their account they get directed to the sign in page to login, where they then get directed to the home page.
+
+![sigup](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/sign_up.png)
 
 ## Create a Post
 
@@ -193,6 +197,7 @@ On the Posts detail page a user can click on the three dots to bring up a menu t
 ## Profile Page
 
 A Profile is automatically created for the user once they sign up, and can be accessed by clicking on their username in the navbar. Profile pages can be viewed by anyone on the site, but only the owner of a profile can edit it. Users are able to edit their profile once signed in by clicking on the three dots. It will give them the option to edit profile or change their username or password. 
+
 
 ## Edit Profile Page
 
