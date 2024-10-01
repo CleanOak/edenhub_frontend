@@ -6,6 +6,9 @@ EdenHub is a social media platform which brings nature lovers to oone place. Thi
 
 **LIVE SITE**
 
+### Test user: test_user1
+password: edenproject
+
 [You can go share your exploration by clicking on this link](https://edenhub-060ed3b8a582.herokuapp.com/)
 
 ## Table of Contents
