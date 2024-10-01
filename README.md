@@ -189,48 +189,68 @@ A quick and simple sign up form so that users can get posting straight away. Onc
 
 By clicking on the New Post button users get taken to a simple upload page. They will get error messages if they miss out adding an image or a title, but content and category are optional fields. They will also get error messages if the image is too large. Once they click 'Post', they get directed to the posts detail where they have the option to edit, delete or comment on it.
 
+![create post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/create_post.png)
+
 ## Edit a Post
 
 On the Posts detail page a user can click on the three dots to bring up a menu to edit or delete their post. On a mobile they can also see a few other users to select and view their Profiles if they wish. To edit their post, just can just update any information and click 'Save'. If they want to delete a post, when they select delete on the drop down they will get a pop up asking to confirm before it gets deleted.
 
+![edit post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/edit_post.png)
 
 ## Profile Page
 
 A Profile is automatically created for the user once they sign up, and can be accessed by clicking on their username in the navbar. Profile pages can be viewed by anyone on the site, but only the owner of a profile can edit it. Users are able to edit their profile once signed in by clicking on the three dots. It will give them the option to edit profile or change their username or password. 
+
+![profile page](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/profile_page.png)
 
 
 ## Edit Profile Page
 
 Clicking on edit profile will take the user to a page where they can upload their own profile picture (the green avatar is the default picture) and include a bit about themselves. If the About Me is left blank nothing appears on their profile page, but that is optional. They are also given the option to update their username or password.
 
+![edit profile](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/edit_profile.png)
+
 ## Comments 
 
 Users can read comments on posts at any time, but are only able to post comments when they are signed in. They will also have the option to edit or delete their comments while signed in. There is also a comment count on each post, so users can easily see when scrolling the feed whether comments have been made or not.
+
+![comment](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/comments_section.png)
 
 ## Deleting a Post or Comment
 
 As part of a defensive design component, users will be asked to confirm they want to delete a post or comment, on the off chance they hit delete by mistake. If they do want to continue with deletion they can confirm and will be redirected back to the previously visied page.
 
+![deleting post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/edit_post2.png)
+
 ## Likes 
 
 All users can see that a post has been liked by a heart icon at the bottom of the post, with a number count next to it, however only those who are logged in are able to leave a like. Users can also click the heart again to unlike a post.
+
+![like](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/like_comment.png)
 
 ## Follows 
 
 Users can follow and unfollow other users by clicking on the button next to their profile on the home page, or by navigating to their profile page and selecting follow from there. Another click of the button will unfollow them.
 
+![follow](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/follows.png)
+
 ## Search Bar & Category Filter 
 
 When viewing all posts on the home, viewers are able to search for posts by keyword in the search bar, or select the drop down menu to filter the posts by a category. 
+
+![searchbar](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/searchbar.png)
 
 ## Empty Results
 
 If a user visits the 'Friends' or 'Liked' pages but hasn't followed any profiles or liked any posts, then these will give an empty feed.
 
+![empty results](no_results_page)
+
 ## 404 Page Not Found
 
 If a user tries to access a page that isn't valid, they will get a 404 Page Not Found error.
 
+![404 page](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/404_page.png)
 
 # Future Implementations
 
