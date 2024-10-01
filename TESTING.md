@@ -11,6 +11,7 @@
 - [**Manual Testing**](#manual-testing)
 - [**Bugs and Fixes**](#bugs-and-fixes)
 - [**Validators**](#validators)
+- [**Appendix**](#appendix)
 
 <!-- /TOC -->
 
@@ -82,7 +83,7 @@ Extensive manual testing was carried out to ensure the Frontend features worked 
 - Web app needs optimising to improve performance on lighthouse
 - Overlay: Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.
 - Not able to store refreshtoken timestamp as a value as a results there is a constant error message in the console as shown below.
-- ***insert error image***
+![refresh token error](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/cors_error.png)
 - Due to time constraints I had to give up on implementing forgotten password via email confirmation
 
 ---
@@ -103,4 +104,9 @@ Results from most of the styles sheet came out with no errors
 ### Light house Performace
 
 ![lighthouse](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/lighthouse.png)
+
+# **Appendix**
+
+![cors_error](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/cors_auth_error.png)
+![axios_error](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/axios_error.png)
 
