@@ -84,5 +84,18 @@ Extensive manual testing was carried out to ensure the Frontend features worked 
 
 # **Validator**
 
-![css_validator]()
-***upload image***
+### CSS Validation
+
+
+Results from most of the styles sheet came out with no errors
+
+![css_validator](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/css_val1.png)
+
+### JSHINT Validator
+
+![jshin](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/jshint.png)
+
+### Light house Performace
+
+![lighthouse](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/lighthouse.png)
+
