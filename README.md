@@ -140,6 +140,24 @@ Before implementing the website, I created [Wireframes for each page using Balsa
 
 ### Home Page - not logged 
 
+[not loggedin](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/loggedin_wf.png)
+
+### Sign Up
+
+[sign up](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/signup_wf.png)
+
+### Sign In
+[sign in](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/signinpage_wf.png)
+
+### User Profile
+[user profile](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/user_profile_wf.png)
+
+### Landing Page
+[landing page](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/landing_wf.png)
+
+### Add Post
+[add post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/addpost_wf.png)
+
 # Backend Planing
 
 ## Data Models & Relationsips
