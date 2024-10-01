@@ -254,6 +254,11 @@ If a user tries to access a page that isn't valid, they will get a 404 Page Not 
 
 # Future Implementations
 
+Future developments will include the following
+
+- Email notifications to users whose post were liked or commented on
+- Email authentication to reset passwords when forgotten
+- Allow users delete the profiles
 
 # **Technologies & Frameworks**
 
@@ -367,5 +372,32 @@ Both Environment & Settings and Deploying to Heroku have been set up [within the
 # **Credits**
 
 ## **Help Resources**
+
+- The [React Bootstrap website](https://react-bootstrap-v4.netlify.app/) was helpful for many things, including the NavBar, Cards, Dropdowns, and other layouts and components.
+- To help with the findDOMNode console error [I used this artcle from bobbhadz.com](https://bobbyhadz.com/blog/react-warning-finddomnode-is-deprecated-in-strict-mode) to help update my index.js file.
+- This article from [freecodecamp.org](https://www.freecodecamp.org/news/error-error-0308010c-digital-envelope-routines-unsupported-node-error-solved/) helped when I was receiving a particular error on my site.
+- [Stack Overflow](https://stackoverflow.com/questions/29349684/how-can-i-specify-the-required-node-js-version-in-package-json) helped when I was looking to specify my Node packages within package.json.
+- After reaching out to the Slack community for help with my category search, [Kelly Hurchison kindly shared her repo](https://github.com/quiltingcode/happening-react-frontend) for me to look as how she did hers.
+- I found [this extension from open-vsk.org](https://open-vsx.org/extension/huntertran/auto-markdown-toc) when doing a Google search for autocreating a Table of Contents for this README document.
+- I used the 'Moments' walkthrough to help with some setup and coding.
+- ChatGPT - to explain certain code and bugs I didn't understand.
+- https://raw.githubusercontent.com/rachaelbabister/from-house-to-home/refs/heads/main/README.md
+- https://github.com/Idehed/cityexplorer-frontend/blob/main/README.md
+
+
+## **Media**
+
+The media used throughout the site has either come from other users who have uploaded their images when testing the site for me, or I have downloaded images Google Images to upload as a post.
+
+- The logo was designed by myself using Canva, with the house icon coming from their icon library.
+- The following images were downloaded from Google Images and then amended to match the sites colour palette.
+    - 'default-avata.webp' (uploaded on the API) - *the default image used on registration and until a user uploads their own profile image.
+    - 'search.webp' - *used when no results have been returned.*
+    - 'notfound.webp' - *used when visiting a url that isn't valid.
+    - 'upload.webp' - *used as a placeholder when uploading an image on a new post.*
+ 
+ ## **Acknowledgments**
+
+The support of my family andfriends has been incredible, from helping to do chores so that I could study, to being asked to yet again go through the site to give me feedback. Thank you, it's so appreciated.
 
 
