@@ -45,7 +45,6 @@ const UsernameForm = () => {
         history.goBack(); // Redirect after a short delay
       }, 2000);
     } catch (err) {
-      console.log(err);
       setErrors(err.response?.data);
     }
   };

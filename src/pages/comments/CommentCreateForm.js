@@ -13,7 +13,7 @@ function CommentCreateForm(props) {
   const handleChange = (event) => {
     const newValue = event.target.value;
     setContent(newValue);
-    console.log("Content:", newValue); // Debugging log
+    
   };
 
   const handleSubmit = async (event) => {
@@ -37,7 +37,7 @@ function CommentCreateForm(props) {
       }));
       setContent(""); // Clear the comment input after submission
     } catch (err) {
-      console.log(err);
+      
     }
   };
 
