@@ -29,6 +29,16 @@ const SignUpForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Check if passwords match
+    if (signUpData.password1 !== signUpData.password2) {
+      setErrors({
+        ...errors,
+        password2: ["Passwords do not match"]
+      });
+      return;
+    }
+
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
       history.push("/signin");
