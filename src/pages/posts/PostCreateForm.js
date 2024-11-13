@@ -96,7 +96,7 @@ function PostCreateForm() {
           name="content"
           value={content}
           onChange={handleChange}
-          className={styles.InputField} // Add custom class
+          className={styles.InputField}
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (

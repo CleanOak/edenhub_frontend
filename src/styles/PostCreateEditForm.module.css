@@ -37,12 +37,23 @@
   object-fit: cover; /* Cover entire container without stretching */
 }
 
+.image-preview-container {
+  max-width: 100%; /* Ensure container doesn't exceed its parent width */
+  max-height: 300px; /* Limit the image preview's height */
+  overflow: hidden; /* Hide any overflow from large images */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem; /* Add space below image preview */
+}
+
 /* CSS for the image preview */
 .img-preview {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the container without stretching the image */
-  max-height: 100%; /* Ensure it stays within the preview container */
+  max-width: 100%; /* Enforce max width */
+  max-height: 100%; /* Enforce max height within container */
+  object-fit: contain; /* Ensure image fits within without cropping */
+  height: auto; /* Keep aspect ratio */
+  width: auto; /* Keep aspect ratio */
 }
 
 .btn {
