@@ -8,6 +8,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import {toast} from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 
 const Post = (props) => {
   const {
@@ -34,12 +35,24 @@ const Post = (props) => {
     history.push(`/posts/${id}/edit`);
   };
 
+
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
+
+      // show success toast
+      // toast.success("Post has been deleted!", {
+      //   position: "top-center",
+      //   autoClose: 3000,
+      // });
+
       history.goBack();
     } catch (err) {
-      
+      // show error toast if something goes wrong
+      toast.error("Failed to delete the post. Please try again.", {
+        position: "top-center",
+        autoClose: 3000,
+      });
     }
   };
 

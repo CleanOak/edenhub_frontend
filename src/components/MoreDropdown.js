@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/MoreDropdown.module.css"
 import "react-toastify/dist/ReactToastify.css";
+import { toast} from "react-toastify";
+import { Modal } from "react-bootstrap";
+import Button from "react-bootstrap";
 
 import { useHistory } from "react-router";
 
 export function ProfileEditDropdown({ id }) {
-  const history = useHistory();
+  
   return (
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={ThreeDots} />
@@ -38,38 +41,56 @@ export function ProfileEditDropdown({ id }) {
 
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu
-const ThreeDots = React.forwardRef(({ onClick }, ref) => (
-    <i
-      className="fas fa-ellipsis-v"
-      ref={ref}
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(e);
-      }}
-    />
-  ));
+// const ThreeDots = React.forwardRef(({ onClick }, ref) => (
+//     <i
+//       className="fas fa-ellipsis-v"
+//       ref={ref}
+//       onClick={(e) => {
+//         e.preventDefault();
+//         onClick(e);
+//       }}
+//     />
+//   ));
   
   export const MoreDropdown = ({ handleEdit, handleDelete }) => {
-    const handleDeleteWithToast = async () => {
+
+    const [ShowConfirm, setShowConfirm] = useState(false);
+
+    // Open the confirmation modal
+
+    const handleShowConfirm = () => setShowConfirm(true);
+
+    // Close the confirmation modal
+    const handleCloseConfirm = () => setShowConfirm(false);
+
+    const handleConfirmedDelete = async () => {
       try {
         // Call the original handleDelete function
         await handleDelete();
   
         // Show success toast
-        toast.success("Item deleted successfully!", {
+        toast.success("Post has been deleted successfully!", {
           position: "top-center",
           autoClose: 3000,
         });
+
+        // close the modal after successful deletioin
+        handleCloseConfirm();
+
       } catch (error) {
         // Show error toast if delete fails
         toast.error("Failed to delete the item. Please try again.", {
           position: "top-center",
           autoClose: 3000,
         });
+
+        // Close the modal in case of an error
+        handleCloseConfirm(); 
       }
     };
 
     return (
+      <>
       <Dropdown className="ms-auto" drop="left">
         <Dropdown.Toggle as={ThreeDots} />
   
@@ -86,12 +107,44 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
           </Dropdown.Item>
           <Dropdown.Item
             className={styles.DropdownItem}
-            onClick={handleDeleteWithToast}
+            onClick={handleShowConfirm} // Show confirmation modal
             aria-label="delete"
           >
             <i className="fas fa-trash-alt" />
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
+
+      {/* Confirmation Modal */}
+      <Modal show={ShowConfirm} onHide={handleCloseConfirm} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Deletion</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Are you sure you want to delete this post? This action cannot be undone.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseConfirm}>
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={handleConfirmedDelete}>
+            Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      </>
     );
   };
+
+ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
+    <i
+      className="fas fa-ellipsis-v"
+      ref={ref}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick(e);
+      }}
+    />
+  ));
+
+export default MoreDropdown;
