@@ -71,12 +71,13 @@ function PostEditForm() {
 
     if (imageInput?.current?.files[0]) {
       formData.append("image", imageInput.current.files[0]);
-    } else {
-      formData.append("image", "");
-    }
+    } 
+    // else {
+    //   formData.append("image", "");
+    // }
 
     try {
-      await axiosReq.put(`/posts/${id}/`, formData);
+      await axiosReq.patch(`/posts/${id}/`, formData);
       history.push(`/posts/${id}`);
     } catch (err) {
       if (err.response?.status !== 401) {
