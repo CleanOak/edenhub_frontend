@@ -1,6 +1,7 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/MoreDropdown.module.css"
+import "react-toastify/dist/ReactToastify.css";
 
 import { useHistory } from "react-router";
 
@@ -49,6 +50,25 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   ));
   
   export const MoreDropdown = ({ handleEdit, handleDelete }) => {
+    const handleDeleteWithToast = async () => {
+      try {
+        // Call the original handleDelete function
+        await handleDelete();
+  
+        // Show success toast
+        toast.success("Item deleted successfully!", {
+          position: "top-center",
+          autoClose: 3000,
+        });
+      } catch (error) {
+        // Show error toast if delete fails
+        toast.error("Failed to delete the item. Please try again.", {
+          position: "top-center",
+          autoClose: 3000,
+        });
+      }
+    };
+
     return (
       <Dropdown className="ms-auto" drop="left">
         <Dropdown.Toggle as={ThreeDots} />
@@ -66,7 +86,7 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
           </Dropdown.Item>
           <Dropdown.Item
             className={styles.DropdownItem}
-            onClick={handleDelete}
+            onClick={handleDeleteWithToast}
             aria-label="delete"
           >
             <i className="fas fa-trash-alt" />

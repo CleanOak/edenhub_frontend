@@ -72,10 +72,7 @@ function PostEditForm() {
     if (imageInput?.current?.files[0]) {
       formData.append("image", imageInput.current.files[0]);
     } 
-    // else {
-    //   formData.append("image", "");
-    // }
-
+   
     try {
       await axiosReq.patch(`/posts/${id}/`, formData);
       history.push(`/posts/${id}`);
