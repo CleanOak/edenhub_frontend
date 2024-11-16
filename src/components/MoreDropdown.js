@@ -3,13 +3,13 @@ import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/MoreDropdown.module.css"
 import "react-toastify/dist/ReactToastify.css";
 import { toast} from "react-toastify";
-import { Modal } from "react-bootstrap";
-import Button from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 
 import { useHistory } from "react-router";
 
 export function ProfileEditDropdown({ id }) {
-  
+  const history = useHistory();
+
   return (
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={ThreeDots} />
@@ -115,7 +115,7 @@ export function ProfileEditDropdown({ id }) {
         </Dropdown.Menu>
       </Dropdown>
 
-      {/* Confirmation Modal */}
+     
       <Modal show={ShowConfirm} onHide={handleCloseConfirm} centered>
         <Modal.Header closeButton>
           <Modal.Title>Confirm Deletion</Modal.Title>
