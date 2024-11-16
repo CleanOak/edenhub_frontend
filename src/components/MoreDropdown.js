@@ -38,19 +38,6 @@ export function ProfileEditDropdown({ id }) {
     </Dropdown>
   );
 }
-
-// The forwardRef is important!!
-// Dropdown needs access to the DOM node in order to position the Menu
-// const ThreeDots = React.forwardRef(({ onClick }, ref) => (
-//     <i
-//       className="fas fa-ellipsis-v"
-//       ref={ref}
-//       onClick={(e) => {
-//         e.preventDefault();
-//         onClick(e);
-//       }}
-//     />
-//   ));
   
   export const MoreDropdown = ({ handleEdit, handleDelete }) => {
 
