@@ -54,7 +54,7 @@ export function ProfileEditDropdown({ id }) {
   
   export const MoreDropdown = ({ handleEdit, handleDelete }) => {
 
-    const [ShowConfirm, setShowConfirm] = useState(false);
+    const [showConfirm, setShowConfirm] = useState(false);
 
     // Open the confirmation modal
 
@@ -116,7 +116,7 @@ export function ProfileEditDropdown({ id }) {
       </Dropdown>
 
      
-      <Modal show={ShowConfirm} onHide={handleCloseConfirm} centered>
+      <Modal show={showConfirm} onHide={handleCloseConfirm} centered>
         <Modal.Header closeButton>
           <Modal.Title>Confirm Deletion</Modal.Title>
         </Modal.Header>
