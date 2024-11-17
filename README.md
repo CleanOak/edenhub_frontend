@@ -131,6 +131,12 @@ Before work started on the build of the website, I created a Board of User Stori
 
 The colours chosen for the website were based on nature inspired colours.
 
+- Green (#6a994e)
+- Green for button active effect (#4b7a38)
+- Orange (#f4a261)
+- Grey (#555555)
+- Blue (#2142b2)
+
 ## Typography
 
 Inter font was chosen for the main fonts of the web app from Google fonts.
