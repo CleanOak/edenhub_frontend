@@ -25,6 +25,8 @@ const Post = (props) => {
     updated_at,
     postPage,
     setPosts,
+    bookmark_id,
+    bookmark_count,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -39,13 +41,6 @@ const Post = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
-
-      // show success toast
-      // toast.success("Post has been deleted!", {
-      //   position: "top-center",
-      //   autoClose: 3000,
-      // });
-
       history.goBack();
     } catch (err) {
       // show error toast if something goes wrong
@@ -87,6 +82,40 @@ const Post = (props) => {
       
     }
   };
+
+  const handlebookmark = async () => {
+    try {
+      const { data } = await axiosRes.post("/bookmarks/", { post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, bookmark_count: post.bookmark_count + 1, bookmark_id_id: data.id }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      
+    }
+  };
+
+
+  const handleUnbookmark = async () => {
+    try {
+      await axiosRes.delete(`/bookmarks/${bookmark_id}/`);
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, bookmark_count: post.bookmark_count - 1, bookmark_id: null }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      
+    }
+  };
+
 
   return (
     <Card className={styles.Post}>

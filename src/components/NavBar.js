@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from './Avatar';
 import axios from 'axios';
@@ -43,12 +44,22 @@ const NavBar = () => {
       </NavLink>
       {/* notification icon */}
       <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/notifications">
+      <OverlayTrigger
+        placement="bottom"
+        overlay={<Tooltip id="tooltip-notifications">Notifications</Tooltip>}
+      >
         <i class="fa-solid fa-bell"></i>
+        </OverlayTrigger>
       </NavLink>
 
       {/* bookmark icon */}
       <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/bookmarks">
+      <OverlayTrigger
+        placement="bottom"
+        overlay={<Tooltip id="tooltip-notifications">Bookmarks</Tooltip>}
+      >
         <i class="fa-solid fa-bookmark"></i>
+        </OverlayTrigger>
       </NavLink>
 
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
