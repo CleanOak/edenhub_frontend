@@ -42,12 +42,12 @@ const NavBar = () => {
         Liked
       </NavLink>
       {/* notification icon */}
-      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/">
+      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/notifications">
         <i class="fa-solid fa-bell"></i>
       </NavLink>
 
       {/* bookmark icon */}
-      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/">
+      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/bookmarks">
         <i class="fa-solid fa-bookmark"></i>
       </NavLink>
 
