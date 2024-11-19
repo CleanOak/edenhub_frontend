@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
-import { useRedirect } from "./hooks/useRedirect";
-
+// import { useRedirect } from "./hooks/useRedirect";
+import { useState } from "react";
 const NotificationsPage = ({ userAuthStatus }) => {
-  const { notifications, loading } = useRedirect(userAuthStatus);
+  // const { notifications, loading } = useRedirect(userAuthStatus);
+
+  const [notifications, setNotifications] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (notifications.length > 0) {
@@ -41,3 +44,4 @@ const NotificationsPage = ({ userAuthStatus }) => {
 };
 
 export default NotificationsPage;
+

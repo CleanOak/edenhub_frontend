@@ -51,22 +51,42 @@ const Post = (props) => {
     }
   };
 
+  // const handleLike = async () => {
+  //   try {
+  //     const { data } = await axiosRes.post("/likes/", { post: id });
+  //     setPosts((prevPosts) => ({
+  //       ...prevPosts,
+  //       results: prevPosts.results.map((post) => {
+  //         return post.id === id
+  //           ? { ...post, 
+  //             likes_count: post.likes_count + 1, 
+  //             like_id: data.id }
+  //           : post;
+  //       }),
+  //     }));
+  //   } catch (err) {
+      
+  //   }
+  // };
+
   const handleLike = async () => {
     try {
-      const { data } = await axiosRes.post("/likes/", { post: id });
+      await axiosRes.post("/likes/", { post: id });
+  
+      // Re-fetch the post data after liking
+      const { data } = await axiosRes.get(`/posts/${id}/`);
+  
       setPosts((prevPosts) => ({
         ...prevPosts,
-        results: prevPosts.results.map((post) => {
-          return post.id === id
-            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
-            : post;
-        }),
+        results: prevPosts.results.map((post) =>
+          post.id === id ? { ...post, likes_count: data.likes_count } : post
+        ),
       }));
     } catch (err) {
-      
+      console.error('Error liking the post:', err);
     }
   };
-
+  
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
