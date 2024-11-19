@@ -50,15 +50,6 @@ function App() {
           )} 
           />
 
-          {/* <Route exact path="/notifications" render={() => (
-          <PostsPage 
-          message="No results found in the EdenHub. 
-          Adjust the keyword or like a post!"
-          filter={`bookmarks__owner__profile=${profile_id}&ordering=-likes__created_at&`}
-          />
-          )} 
-          /> */}
-
           <Route exact path="/bookmarks" render={() => (
           <PostsPage 
           message="No results found in the EdenHub. 

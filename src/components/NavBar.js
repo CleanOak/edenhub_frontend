@@ -42,24 +42,11 @@ const NavBar = () => {
         <i className="fa-solid fa-heart"></i>
         Liked
       </NavLink>
-      {/* notification icon */}
-      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/notifications">
-      <OverlayTrigger
-        placement="bottom"
-        overlay={<Tooltip id="tooltip-notifications">Notifications</Tooltip>}
-      >
-        <i class="fa-solid fa-bell"></i>
-        </OverlayTrigger>
-      </NavLink>
-
+      
       {/* bookmark icon */}
       <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/bookmarks">
-      <OverlayTrigger
-        placement="bottom"
-        overlay={<Tooltip id="tooltip-notifications">Bookmarks</Tooltip>}
-      >
         <i class="fa-solid fa-bookmark"></i>
-        </OverlayTrigger>
+        Bookmarks
       </NavLink>
 
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
