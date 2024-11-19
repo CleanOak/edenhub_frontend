@@ -90,7 +90,7 @@ const Post = (props) => {
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, bookmark_count: post.bookmark_count + 1, bookmark_id_id: data.id }
+            ? { ...post, bookmark_count: post.bookmark_count + 1, bookmark_id: data.id }
             : post;
         }),
       }));
@@ -143,6 +143,7 @@ const Post = (props) => {
         {title && <Card.Title className={styles.PostTitle}>{title}</Card.Title>}
         {content && <Card.Text className={styles.PostContent}>{content}</Card.Text>}
         <div className={styles.PostBar}>
+  {/* Like button */}
   {is_owner ? (
     <OverlayTrigger
       placement="top"
@@ -174,6 +175,42 @@ const Post = (props) => {
       </div>
     </OverlayTrigger>
   )}
+
+  {/* Bookmark button*/}
+  {is_owner ? (
+    <OverlayTrigger
+      placement="top"
+      overlay={<Tooltip>You can't bookmark your own post!</Tooltip>}
+    >
+      <div className={styles.BookmarkContainer}>
+      <i class="fa-solid fa-bookmark"></i>
+        <span className={styles.BookmarkCount}>{bookmark_count}</span>
+      </div>
+    </OverlayTrigger>
+  ) : bookmark_id ? (
+    <span onClick={handleUnbookmark} className={styles.BookmarkContainer}>
+      <i className={`fa-solid fa-bookmark ${styles.Bookmark}`} />
+      <span className={styles.BookmarkCount}>{bookmark_count}</span>
+    </span>
+  ) : currentUser ? (
+    <span onClick={handlebookmark} className={styles.BookmarkContainer}>
+      <i className={`fa-solid fa-bookmark ${styles.BookmarkOutline}`} />
+      <span className={styles.BookmarkCount}>{bookmark_count}</span>
+    </span>
+  ) : (
+    <OverlayTrigger
+      placement="top"
+      overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
+    >
+      <div className={styles.BookmarkContainer}>
+      <i class="fa-solid fa-bookmark"></i>
+        <span className={styles.BookmarkCount}>{bookmark_count}</span>
+      </div>
+    </OverlayTrigger>
+  )}
+
+  {/* Comment */}
+
   <Link to={`/posts/${id}`} className={styles.CommentIcon}>
     <i className="far fa-comments" />
     <span className={styles.CommentCount}>{comments_count}</span>

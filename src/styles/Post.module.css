@@ -76,7 +76,34 @@
   margin-right: 8px; /* Adjust as needed for spacing */
 }
 
+.Bookmark {
+  color: #0056b3; /* Instagram heart color */
+}
+
+.Bookmark,
+.BookmarkOutline {
+  cursor: pointer;
+  color: #999;
+  margin-right: 0; /* Removed margin to bring it closer */
+}
+
+.Bookmark:hover,
+.BookmarkOutline:hover {
+  color: #0056b3; /* Highlight color on hover */
+}
+
+.BookmarkContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 8px; /* Adjust as needed for spacing */
+}
+
 .LikeCount {
+  font-size: 14px;
+  margin-left: 2px; /* Minimal space between icon and count */
+}
+
+.BookmarkCount {
   font-size: 14px;
   margin-left: 2px; /* Minimal space between icon and count */
 }
