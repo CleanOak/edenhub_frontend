@@ -204,7 +204,7 @@ By clicking on the New Post button users get taken to a simple upload page. They
 
 On the Posts detail page a user can click on the three dots to bring up a menu to edit or delete their post. On a mobile they can also see a few other users to select and view their Profiles if they wish. To edit their post, just can just update any information and click 'Save'. If they want to delete a post, when they select delete on the drop down they will get a pop up asking to confirm before it gets deleted.
 
-![edit post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/edit_post.png)
+![edit post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/delete_post.png)
 
 ## Profile Page
 
@@ -229,7 +229,7 @@ Users can read comments on posts at any time, but are only able to post comments
 
 As part of a defensive design component, users will be asked to confirm they want to delete a post or comment, on the off chance they hit delete by mistake. If they do want to continue with deletion they can confirm and will be redirected back to the previously visied page.
 
-![deleting post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/edit_post2.png)
+![deleting post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/delete_post.png)
 
 ## Likes 
 
