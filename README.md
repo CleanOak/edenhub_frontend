@@ -229,7 +229,11 @@ Users can read comments on posts at any time, but are only able to post comments
 
 As part of a defensive design component, users will be asked to confirm they want to delete a post or comment, on the off chance they hit delete by mistake. If they do want to continue with deletion they can confirm and will be redirected back to the previously visied page.
 
-![deleting post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/delete_post.png)
+![deleting post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/delete_choice.png)
+
+## Deleting a Post confirmation
+
+![deleting post](https://github.com/CleanOak/edenhub_frontend/blob/main/src/assets/docs/delete_confirm.png)
 
 ## Likes 
 
